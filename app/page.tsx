@@ -32,6 +32,8 @@ const businessSchema = {
   description:
     "Sales and financial performance analytics: sales trends, profitability, financial performance reviews, receivables and cash conversion analysis, and reporting automation.",
   areaServed: "Kenya",
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/og-cover.png`,
   sameAs: [GBP_URL],
 };
 
@@ -93,18 +95,16 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div
-            aria-label="Illustrative management pack excerpt: budget versus actual by line"
-            role="img"
-            className="rounded-xl bg-white p-6 text-navy shadow-xl"
-          >
+          <div className="rounded-xl bg-white p-6 text-navy shadow-xl">
             <div className="flex items-baseline justify-between">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 Management pack · illustrative excerpt
               </p>
               <p className="text-xs text-slate-400">Aug</p>
             </div>
-            <table className="mt-4 w-full text-sm">
+            <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Illustrative management pack excerpt: budget versus actual by line</caption>
               <thead>
                 <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wider text-slate-500">
                   <th className="py-2 pr-2 font-semibold">Line</th>
@@ -140,6 +140,7 @@ export default function HomePage() {
                 </tr>
               </tbody>
             </table>
+            </div>
             <p className="mt-4 border-l-4 border-accent bg-mist p-3 text-sm leading-relaxed text-charcoal">
               Sales within 1% of budget — yet gross profit 19% behind. The
               diagnosis: cost pressure plus a shift toward lower-margin lines.
@@ -161,11 +162,33 @@ export default function HomePage() {
 
       {/* Problems */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-dark">Business problems we solve</p>
-        <h2 className="mt-2 max-w-2xl text-3xl font-bold text-navy">
-          Recognise any of these in your business?
-        </h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-dark">Business problems we solve</p>
+            <h2 className="mt-2 max-w-2xl text-3xl font-bold text-navy">
+              Recognise any of these in your business?
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-charcoal">
+              The businesses we work with see the results in their reports —
+              what they cannot see is the reason behind them.
+            </p>
+          </div>
+          <figure className="md:justify-self-end">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/business-owner.jpg"
+              alt="A shop owner standing between stocked shelves in a wholesale store"
+              className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
+              width={1100}
+              height={733}
+              loading="lazy"
+            />
+            <figcaption className="mt-2 text-xs text-slate-500">
+              Illustrative image.
+            </figcaption>
+          </figure>
+        </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {problems.map((p) => (
             <div key={p.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
               <h3 className="font-semibold text-navy">{p.title}</h3>
@@ -231,9 +254,32 @@ export default function HomePage() {
       {/* How we work */}
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-dark">How we work</p>
-          <h2 className="mt-2 text-3xl font-bold text-navy">Understand. Diagnose. Improve.</h2>
-          <ol className="mt-8 grid gap-8 md:grid-cols-3">
+          <div className="grid items-center gap-8 md:grid-cols-2">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-dark">How we work</p>
+              <h2 className="mt-2 text-3xl font-bold text-navy">Understand. Diagnose. Improve.</h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-charcoal">
+                Every engagement follows the same discipline: establish the
+                question, test the explanations against the evidence, then
+                prioritise what to change.
+              </p>
+            </div>
+            <figure className="md:justify-self-end">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/analyst-desk.jpg"
+                alt="An analyst reviewing printed financial reports beside a laptop showing a trend chart"
+                className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
+                width={1248}
+                height={832}
+                loading="lazy"
+              />
+              <figcaption className="mt-2 text-xs text-slate-500">
+                Illustrative image.
+              </figcaption>
+            </figure>
+          </div>
+          <ol className="mt-10 grid gap-8 md:grid-cols-3">
             {[
               { n: "01", t: "Understand", d: "Establish the business question, examine the available data, and understand the performance that needs investigation." },
               { n: "02", t: "Diagnose", d: "Decompose the results, identify root causes, test explanations against the evidence, and quantify the major drivers." },

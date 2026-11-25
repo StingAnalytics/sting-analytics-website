@@ -19,6 +19,20 @@ export default function AboutPage() {
         analytics to help organisations understand their results, identify the
         causes behind their performance, and make better-informed decisions.”
       </p>
+      <figure className="mt-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/reports-desk.jpg"
+          alt="Printed financial statements and a bar chart on a desk with a pen, calculator and notebook"
+          className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
+          width={1200}
+          height={800}
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-xs text-slate-500">
+          Illustrative image.
+        </figcaption>
+      </figure>
       <div className="mt-8 space-y-4 text-charcoal">
         <p>
           We are not a dashboard vendor or a generic data shop. We investigate

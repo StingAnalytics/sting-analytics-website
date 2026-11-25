@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/services/", "/case-studies/", "/about/", "/contact/"];
   return pages.map((p) => ({
     url: `${base}${p === "" ? "/" : p}`,
-    lastModified: new Date("2026-10-29"),
+    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: p === "" ? 1 : 0.8,
   }));

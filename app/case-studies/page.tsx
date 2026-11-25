@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Three simulated analytical case studies: revenue decline diagnostics, management performance pack, receivables and cash conversion.",
+  openGraph: {
+    title: "Case Studies",
+    description:
+      "Three simulated analytical case studies: revenue decline diagnostics, management performance pack, receivables and cash conversion.",
+    images: [{ url: "/og-cover.png", width: 1200, height: 630, alt: "Sting Analytics case studies: simulated analytical diagnostics" }],
+  },
 };
 
 function Block({ id, title, stat, repoUrl, question, findings, approach, actions, limits }: CaseStudy) {

@@ -27,7 +27,11 @@ export default function ContactForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Enter a valid work email.";
     if (message.length < 20) next.message = "Describe the problem in at least 20 characters so we can respond usefully.";
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    const firstInvalid = ["name", "email", "message"].find((k) => next[k]);
+    if (firstInvalid) {
+      (form.elements.namedItem(firstInvalid) as HTMLElement | null)?.focus();
+      return;
+    }
 
     setStatus({ kind: "sending" });
     const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
@@ -64,8 +68,8 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-semibold text-navy">Name *</label>
-          <input id="name" name="name" autoComplete="name" className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
-          {errors.name && <p role="alert" className="mt-1 text-sm text-red-700">{errors.name}</p>}
+          <input id="name" name="name" autoComplete="name" aria-invalid={errors.name ? true : undefined} aria-describedby={errors.name ? "name-error" : undefined} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+          {errors.name && <p id="name-error" role="alert" className="mt-1 text-sm text-red-700">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="business" className="text-sm font-semibold text-navy">Business / organisation</label>
@@ -75,8 +79,8 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="email" className="text-sm font-semibold text-navy">Work email *</label>
-          <input id="email" name="email" type="email" autoComplete="email" className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
-          {errors.email && <p role="alert" className="mt-1 text-sm text-red-700">{errors.email}</p>}
+          <input id="email" name="email" type="email" autoComplete="email" aria-invalid={errors.email ? true : undefined} aria-describedby={errors.email ? "email-error" : undefined} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+          {errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-700">{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="service" className="text-sm font-semibold text-navy">Service of interest</label>
@@ -89,8 +93,8 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="text-sm font-semibold text-navy">Brief description of the business problem *</label>
-        <textarea id="message" name="message" rows={6} placeholder="What is happening, what is hard to explain, and which decision needs better evidence?" className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
-        {errors.message && <p role="alert" className="mt-1 text-sm text-red-700">{errors.message}</p>}
+        <textarea id="message" name="message" rows={6} placeholder="What is happening, what is hard to explain, and which decision needs better evidence?" aria-invalid={errors.message ? true : undefined} aria-describedby={errors.message ? "message-error" : undefined} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
+        {errors.message && <p id="message-error" role="alert" className="mt-1 text-sm text-red-700">{errors.message}</p>}
       </div>
       <div>
         <label htmlFor="contactPref" className="text-sm font-semibold text-navy">Preferred contact method (optional)</label>
@@ -107,7 +111,7 @@ export default function ContactForm() {
       {status.kind === "sent" && (
         <p role="status" className="rounded-md bg-green-50 p-3 text-sm text-green-900">
           {status.via === "email"
-            ? "Your email client should now open with the enquiry addressed to {CONTACT_EMAIL}. If it did not open, please email us directly."
+            ? `Your email client should now open with the enquiry addressed to ${CONTACT_EMAIL}. If it did not open, please email us directly.`
             : "Thank you — your enquiry was sent. We will reply to your work email."}
         </p>
       )}

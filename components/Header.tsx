@@ -18,7 +18,7 @@ export default function Header() {
             src="/logo.png"
             alt="Sting Analytics logo"
             className="h-11 w-auto"
-            width={180}
+            width={66}
             height={44}
           />
           <span className="sr-only">Sting Analytics — home</span>

@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Sales performance, profitability, financial performance, receivables and BI reporting automation — analysis that explains causes and supports decisions.",
+  openGraph: {
+    title: "Services",
+    description:
+      "Sales performance, profitability, financial performance, receivables and BI reporting automation — analysis that explains causes and supports decisions.",
+    images: [{ url: "/og-cover.png", width: 1200, height: 630, alt: "Sting Analytics services: sales, profitability, financial performance and receivables analysis" }],
+  },
 };
 
 
@@ -21,6 +27,20 @@ export default function ServicesPage() {
         scoped — not every deliverable applies to every project — and fixed
         prices are agreed after scoping.
       </p>
+      <figure className="mt-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/team-review.jpg"
+          alt="Colleagues reviewing printed charts and a laptop around a meeting table"
+          className="aspect-[21/9] max-h-[360px] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
+          width={1400}
+          height={600}
+          loading="lazy"
+        />
+        <figcaption className="mt-2 text-xs text-slate-500">
+          Illustrative image.
+        </figcaption>
+      </figure>
       <div className="mt-10 space-y-8">
         {services.map((s, i) => (
           <section key={s.id} id={s.id} className="scroll-mt-24 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">

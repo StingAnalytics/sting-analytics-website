@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "Understand Your Numbers. Improve Your Business Performance.",
     images: [{ url: "/og-cover.png", alt: "Sting Analytics — Understand. Diagnose. Improve." }],
   },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.ico", apple: "/logo.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

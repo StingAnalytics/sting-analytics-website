@@ -11,7 +11,7 @@ export default function Footer() {
             src="/logo.png"
             alt="Sting Analytics — Understand. Diagnose. Improve."
             className="h-16 w-auto rounded bg-white p-1.5"
-            width={260}
+            width={96}
             height={64}
           />
           <p className="mt-4 text-sm leading-relaxed text-slate-300">
