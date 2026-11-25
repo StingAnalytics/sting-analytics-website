@@ -31,10 +31,10 @@ export default function ServicesPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/team-review.jpg"
-          alt="Colleagues reviewing printed charts and a laptop around a meeting table"
+          alt="Executives reviewing printed charts around a marble boardroom table with a city view at golden hour"
           className="aspect-[21/9] max-h-[360px] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
-          width={1400}
-          height={600}
+          width={1568}
+          height={672}
           loading="lazy"
         />
         <figcaption className="mt-2 text-xs text-slate-500">

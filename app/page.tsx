@@ -177,10 +177,10 @@ export default function HomePage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/business-owner.jpg"
-              alt="A shop owner standing between stocked shelves in a wholesale store"
+              alt="A boutique owner in a cream blazer standing among brass clothing rails in her upscale store"
               className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
-              width={1100}
-              height={733}
+              width={1248}
+              height={832}
               loading="lazy"
             />
             <figcaption className="mt-2 text-xs text-slate-500">
@@ -268,7 +268,7 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/analyst-desk.jpg"
-                alt="An analyst reviewing printed financial reports beside a laptop showing a trend chart"
+                alt="An analyst in a suit reviewing printed reports beside a laptop showing a trend chart in a glass-walled office above the city"
                 className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
                 width={1248}
                 height={832}
@@ -348,8 +348,8 @@ export default function HomePage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={FOUNDER_PHOTO}
-            alt="Portrait placeholder — official founder photo coming soon"
-            className="h-20 w-20 shrink-0 rounded-full"
+            alt="Portrait of a man in a dark suit and glasses against a dark background — placeholder, not the founder"
+            className="h-20 w-20 shrink-0 rounded-xl"
             width={80}
             height={80}
           />

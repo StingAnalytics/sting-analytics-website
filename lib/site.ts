@@ -5,7 +5,7 @@
 export const SITE_URL = "https://stinganalytics.com";
 export const SITE_NAME = "Sting Analytics";
 export const CONTACT_EMAIL = "stinganalytics01@gmail.com";
-export const FOUNDER_PHOTO = "/founder-placeholder.svg";
+export const FOUNDER_PHOTO = "/images/founder.jpg";
 
 export const GBP_URL =
   "https://www.google.com/maps/search/?api=1&query=Sting+Analytics+Nairobi";

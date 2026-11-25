@@ -23,10 +23,10 @@ export default function AboutPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/reports-desk.jpg"
-          alt="Printed financial statements and a bar chart on a desk with a pen, calculator and notebook"
+          alt="Printed financial statements with a bar chart on a marble desk beside a fountain pen, calculator and notebook"
           className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm ring-1 ring-slate-200"
-          width={1200}
-          height={800}
+          width={1248}
+          height={832}
           loading="lazy"
         />
         <figcaption className="mt-2 text-xs text-slate-500">
@@ -49,7 +49,7 @@ export default function AboutPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={FOUNDER_PHOTO}
-          alt="Portrait placeholder — official founder photo coming soon"
+          alt="Portrait of a man in a dark suit and glasses against a dark background — placeholder, not the founder"
           className="h-40 w-40 shrink-0 rounded-2xl"
           width={160}
           height={160}
